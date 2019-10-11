@@ -1,0 +1,16 @@
+{
+  "name": "gk-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://guykahalani.github.io/portfolio",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d ."
+  },
+  "author": "Guy k",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
