@@ -459,21 +459,16 @@ main#work .projects .item img:hover {
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+    padding: 1.5rem;
   }
   main .lg-heading {
     line-height: 1;
     margin-bottom: 1rem;
   }
-  main#about {
-    padding: 1.5rem;
-  }
   main#about .about-info {
         grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-  }
-  main#work {
-    padding: 1.5rem;
   }
   main#work .projects {
     -ms-grid-columns: (1fr)[2];
@@ -522,12 +517,6 @@ main#work .projects .item img:hover {
   main#work .projects {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (max-width: 325px) {
-  html {
-    position: relative;
   }
 }
 /*# sourceMappingURL=main.css.map */
