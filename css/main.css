@@ -203,10 +203,6 @@
           box-sizing: border-box;
 }
 
-html {
-  position: relative;
-}
-
 body {
   background: #0C1821;
   color: #fff;
@@ -515,6 +511,9 @@ main#work .projects .item img:hover {
 }
 
 @media screen and (max-width: 500px) {
+  html {
+    position: relative;
+  }
   main#home h1 {
     margin-top: 10vh;
   }
