@@ -23,6 +23,7 @@
   main {
     align-items: center;
     text-align: center;
+    padding: 1.5rem;
 
     .lg-heading {
       line-height: 1;
@@ -30,7 +31,6 @@
     }
 
     &#about {
-      padding: 1.5rem;
 
       .about-info {
         grid-template-areas:
@@ -45,7 +45,6 @@
       }
     }
     &#work {
-      padding: 1.5rem;
 
       .projects {
         grid-template-columns: repeat(2, 1fr);
@@ -119,12 +118,5 @@
         grid-template-columns: 1fr;
       }
     }
-  }
-}
-
-// iPhone5 4 yaya
-@include mediaXs {
-  html {
-    position: relative;
   }
 }
