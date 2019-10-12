@@ -97,10 +97,6 @@
 }
 // Smartphones
 @include mediaSm {
-
-  html {
-    position: relative;
-  }
   
   main {
     &#home {
@@ -123,5 +119,12 @@
         grid-template-columns: 1fr;
       }
     }
+  }
+}
+
+// iPhone5 4 yaya
+@include mediaXs {
+  html {
+    position: relative;
   }
 }

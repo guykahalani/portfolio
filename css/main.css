@@ -511,9 +511,6 @@ main#work .projects .item img:hover {
 }
 
 @media screen and (max-width: 500px) {
-  html {
-    position: relative;
-  }
   main#home h1 {
     margin-top: 10vh;
   }
@@ -525,6 +522,12 @@ main#work .projects .item img:hover {
   main#work .projects {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  html {
+    position: relative;
   }
 }
 /*# sourceMappingURL=main.css.map */
