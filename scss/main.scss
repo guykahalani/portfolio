@@ -5,10 +5,6 @@
   box-sizing: border-box;
 }
 
-html {
-  position: relative;
-}
-
 body {
   @include background;
   background: $primary-color;

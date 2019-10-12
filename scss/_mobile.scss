@@ -97,6 +97,11 @@
 }
 // Smartphones
 @include mediaSm {
+
+  html {
+    position: relative;
+  }
+  
   main {
     &#home {
       h1 {
