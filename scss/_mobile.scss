@@ -30,6 +30,8 @@
     }
 
     &#about {
+      padding: 1.5rem;
+
       .about-info {
         grid-template-areas:
           'bioimage'
@@ -39,9 +41,12 @@
           'job3';
 
         grid-template-columns: 1fr;
+
       }
     }
     &#work {
+      padding: 1.5rem;
+
       .projects {
         grid-template-columns: repeat(2, 1fr);
       }

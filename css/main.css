@@ -203,6 +203,10 @@
           box-sizing: border-box;
 }
 
+html {
+  position: relative;
+}
+
 body {
   background: #0C1821;
   color: #fff;
@@ -464,10 +468,16 @@ main#work .projects .item img:hover {
     line-height: 1;
     margin-bottom: 1rem;
   }
+  main#about {
+    padding: 1.5rem;
+  }
   main#about .about-info {
         grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  main#work {
+    padding: 1.5rem;
   }
   main#work .projects {
     -ms-grid-columns: (1fr)[2];
