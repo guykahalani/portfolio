@@ -519,4 +519,10 @@ main#work .projects .item img:hover {
         grid-template-columns: 1fr;
   }
 }
+
+@media screen and (max-height: 414px) {
+  html {
+    position: relative;
+  }
+}
 /*# sourceMappingURL=main.css.map */

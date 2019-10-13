@@ -42,7 +42,7 @@ $background-opacity: 0.9;
 
 // Media query mixins
 @mixin mediaXs {
-  @media screen and (max-width: 325px) { 
+  @media screen and (max-height: 414px) { 
     @content;
   }
 }
