@@ -186,12 +186,33 @@ main {
   &:hover {
     background: $secondary-color;
     color: set-text-color($secondary-color);
+    &.tech-tags span {
+      color: set-text-color($secondary-color);
+      border-color: set-text-color($secondary-color);
+    }
   }
 }
 .btn-dark {
   @extend .btn;
   background: darken($primary-color, 50);
   color: set-text-color($primary-color);
+  &.tech-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    span {
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.7em;
+      padding: 3px 7px;
+      border-radius: 40px;
+      border: 1px solid #fff;
+      margin: 0 1px;
+    }
+  }
+
 }
 .btn-light {
   @extend .btn;
