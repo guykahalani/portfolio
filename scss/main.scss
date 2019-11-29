@@ -28,6 +28,7 @@ h3 {
   }
 
   &.sm-heading {
+    font-size: 0.9rem;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color, 2), 0.5);
@@ -160,19 +161,118 @@ main {
       .item {
         text-align: center;
         
-        img {
+        .item-inner {
           width: 100%;
-          height: 180px;
+          height: 175px;
           border: 3px #fff solid;
-          object-fit: cover;
-          object-position: 0 57%;
+          position: relative;
+          .proj-preview {
+            width: 100%;
+            height: 100%;
+          }
           &:hover {
-            opacity: 0.5;
             border-color: $secondary-color;
-            @include easeOut;
+            .proj-preview {
+              opacity: 0.5;
+              @include easeOut;
+            }
+            .tech-tags {
+              visibility: visible;
+              animation: fadeIn ease 0.7s;
+              -webkit-animation: fadeIn ease 0.7s;
+              -moz-animation: fadeIn ease 0.7s;
+              z-index: 2;
+            }
+          }
+          .tech-tags {
+            visibility: hidden;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            span {
+              color: #fff;
+              font-weight: bold;
+              font-size: 0.7em;
+              padding: 3px 7px;
+              border-radius: 40px;
+              border: 1px solid #fff;
+              margin: 0 1px;
+            }
+            
           }
         }
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 0 57%;
+        }
       }
+    }
+
+    .modal {
+        .close-modal {
+          position: fixed;
+          right: 30px;
+          top: 30px;
+          font-size: 2.5rem;
+          cursor: pointer;
+          z-index: 2;
+        }
+        .container {
+          background-color: rgba(lighten($primary-color, 2), 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 1;
+          .modal-content {
+            border: 3px solid $secondary-color;
+            min-height: 20rem;
+            width: 40rem;
+            background: $primary-color;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p {
+              text-align: justify;
+              font-size: 0.8rem;
+              em {
+                color: red;
+              }
+            }
+            .tech-tags {
+              font-size: 0.8rem;
+              span {
+                color: #fff;
+                font-weight: bold;
+                font-size: 0.7em;
+                padding: 3px 7px;
+                border-radius: 40px;
+                border: 1px solid #fff;
+                margin: 0 1px;
+              }
+            }
+            .links {
+              margin-top: 20px;
+              a {
+                text-align: center;
+              }
+            }
+          }
+        }
+      
     }
   }
 }
@@ -186,33 +286,19 @@ main {
   &:hover {
     background: $secondary-color;
     color: set-text-color($secondary-color);
-    &.tech-tags span {
-      color: set-text-color($secondary-color);
-      border-color: set-text-color($secondary-color);
-    }
   }
 }
 .btn-dark {
   @extend .btn;
   background: darken($primary-color, 50);
   color: set-text-color($primary-color);
-  &.tech-tags {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
 
-    span {
-      color: #fff;
-      font-weight: bold;
-      font-size: 0.7em;
-      padding: 3px 7px;
-      border-radius: 40px;
-      border: 1px solid #fff;
-      margin: 0 1px;
+  &.not-allowed {
+    cursor: not-allowed;
+    &:hover {
+      background: grey;
     }
   }
-
 }
 .btn-light {
   @extend .btn;

@@ -1,3 +1,21 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -246,6 +264,7 @@ h3.lg-heading {
 h1.sm-heading,
 h2.sm-heading,
 h3.sm-heading {
+  font-size: 0.9rem;
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
   background: rgba(15, 29, 40, 0.5);
@@ -397,21 +416,150 @@ main#work .projects .item {
   text-align: center;
 }
 
+main#work .projects .item .item-inner {
+  width: 100%;
+  height: 175px;
+  border: 3px #fff solid;
+  position: relative;
+}
+
+main#work .projects .item .item-inner .proj-preview {
+  width: 100%;
+  height: 100%;
+}
+
+main#work .projects .item .item-inner:hover {
+  border-color: #E2C044;
+}
+
+main#work .projects .item .item-inner:hover .proj-preview {
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+main#work .projects .item .item-inner:hover .tech-tags {
+  visibility: visible;
+  animation: fadeIn ease 0.7s;
+  -webkit-animation: fadeIn ease 0.7s;
+  -moz-animation: fadeIn ease 0.7s;
+  z-index: 2;
+}
+
+main#work .projects .item .item-inner .tech-tags {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+main#work .projects .item .item-inner .tech-tags span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.7em;
+  padding: 3px 7px;
+  border-radius: 40px;
+  border: 1px solid #fff;
+  margin: 0 1px;
+}
+
 main#work .projects .item img {
   width: 100%;
-  height: 180px;
-  border: 3px #fff solid;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 0 57%;
      object-position: 0 57%;
 }
 
-main#work .projects .item img:hover {
-  opacity: 0.5;
-  border-color: #E2C044;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+main#work .modal .close-modal {
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+main#work .modal .container {
+  background-color: rgba(15, 29, 40, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+main#work .modal .container .modal-content {
+  border: 3px solid #E2C044;
+  min-height: 20rem;
+  width: 40rem;
+  background: #0C1821;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main#work .modal .container .modal-content p {
+  text-align: justify;
+  font-size: 0.8rem;
+}
+
+main#work .modal .container .modal-content p em {
+  color: red;
+}
+
+main#work .modal .container .modal-content .tech-tags {
+  font-size: 0.8rem;
+}
+
+main#work .modal .container .modal-content .tech-tags span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.7em;
+  padding: 3px 7px;
+  border-radius: 40px;
+  border: 1px solid #fff;
+  margin: 0 1px;
+}
+
+main#work .modal .container .modal-content .links {
+  margin-top: 20px;
+}
+
+main#work .modal .container .modal-content .links a {
+  text-align: center;
 }
 
 .btn, .btn-dark, .btn-light {
@@ -426,38 +574,17 @@ main#work .projects .item img:hover {
   color: #000;
 }
 
-.btn:hover.tech-tags span, .btn-dark:hover.tech-tags span, .btn-light:hover.tech-tags span {
-  color: #000;
-  border-color: #000;
-}
-
 .btn-dark {
   background: black;
   color: #fff;
 }
 
-.btn-dark.tech-tags {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+.btn-dark.not-allowed {
+  cursor: not-allowed;
 }
 
-.btn-dark.tech-tags span {
-  color: #fff;
-  font-weight: bold;
-  font-size: 0.7em;
-  padding: 3px 7px;
-  border-radius: 40px;
-  border: 1px solid #fff;
-  margin: 0 1px;
+.btn-dark.not-allowed:hover {
+  background: grey;
 }
 
 .btn-light {
